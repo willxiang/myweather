@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "我的天气",
+    "version": "1.0",
+    "description": "我的第一个Chrome扩展",
+    "icons": {
+        "16": "images/16.png",
+        "48": "images/48.png",
+        "128": "images/128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "images/19.png",
+            "38": "images/38.png"
+        },
+        "default_title": "我的天气",
+        "default_popup": "popup.html"
+    }
+}
