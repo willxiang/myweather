@@ -1,2 +1,0 @@
-# myweather
-chrome extension test.
