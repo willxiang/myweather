@@ -4,6 +4,7 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/angular.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet">
     </style>
     <script src="js/my_weather.js"></script>
@@ -11,15 +12,15 @@
 
 <body>
     <div id="main">
-        <table class="table table-striped" ng-controller="listCtrl">
+        <table class="table table-striped" ng-controller="listCtrl" style="width:400px;">
             <tbody>
                 <th>Username</th>
                 <th>Age</th>
                 <th>Gender</th>
                 <tr ng-repeat="item in items">
-                    <td ng-bind="item.username"></td>
-                    <td ng-bind="item.age"></td>
-                    <td ng-bind="item.gender"></td>
+                    <td ng-bind="item.id"></td>
+                    <td ng-bind="item.city"></td>
+                    <td ng-bind="item.prov"></td>
                 </tr>
             </tbody>
         </table>

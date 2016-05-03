@@ -15,5 +15,8 @@
         },
         "default_title": "我的天气",
         "default_popup": "popup.html"
-    }
+    },
+    "permissions": [
+        "storage"
+    ]
 }
