@@ -1,29 +1,40 @@
 <html ng-app="myweather">
 
 <head>
+    <meta charset="UTF-8">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/angular.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <link href="css/jquery-ui.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
-    </style>
     <script src="js/my_weather.js"></script>
+    <style>
+    #description {
+        margin: 0;
+        padding: 0;
+    }
+    </style>
 </head>
 
 <body>
-    <div id="main">
-        <table class="table table-striped" ng-controller="listCtrl" style="width:400px;">
+    <div id="main" ng-controller="listCtrl">
+        <input id="autocomplete">
+        <input type="hidden" id="cityid">
+        <p id="description"></p>
+        <a href="javascript:;" class="btn btn-default" ng-click="showok()">ok</a>
+        <!-- <table class="table table-striped" style="width:400px;">
             <tbody>
-                <th>Username</th>
-                <th>Age</th>
-                <th>Gender</th>
+                <th>id</th>
+                <th>city</th>
+                <th>prov</th>
                 <tr ng-repeat="item in items">
                     <td ng-bind="item.id"></td>
                     <td ng-bind="item.city"></td>
                     <td ng-bind="item.prov"></td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
     </div>
 </body>
 
