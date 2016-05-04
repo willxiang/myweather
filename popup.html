@@ -1,41 +1,48 @@
 <html ng-app="myweather">
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width" />
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/angular.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/jquery-ui.js"></script>
-    <link href="css/jquery-ui.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
     <script src="js/my_weather.js"></script>
-    <style>
-    #description {
-        margin: 0;
-        padding: 0;
-    }
-    </style>
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+    <link href="css/weather.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="main" ng-controller="listCtrl">
+    <div id="content" ng-controller="listCtrl">
+        <!-- <div class="loading_mask"></div> -->
+        <div class="city_mask" style="display:none;">&nbsp;城市列表</div>
+        <a class="weather_today">
+            <p class="weather_city_date"><em class="current_city" title="选择城市"></em>{{weather.basic.city}} {{weather.nowtime}}</p>
+            <div class="weather_today_icon"><img ng-src="http://www.heweather.com/weather/images/icon/{{weather.now.cond.code}}.png" /></div>
+            <p class="weather_today_temp">{{weather.now.tmp}}℃</p>
+            <p class="weather_weath">{{weather.now.cond.txt}}</p>
+            <p>{{weather.now.wind.dir}}</p>
+            <p class="weather_today_aqi">空气质量:<em style="background-color:#afdb00">{{weather.aqi.city.aqi}} {{weather.aqi.city.qlty}}</em></p>
+        </a>
+        <a class="weather_day" ng-repeat="day in weather.daily_forecast">
+            <div class="weather_day_hover"></div>
+            <div class="weather_day_split"></div>
+            <p class="weather_date">{{day.weekday}}</p>
+            <p class="weather_date_day">{{day.date}}</p>
+            <div class="weather_day_icon"><img ng-src="http://www.heweather.com/weather/images/icon/{{day.cond.code_d}}.png" /></div>
+            <p class="weather_day_temp">{{day.tmp.min}} ~ {{day.tmp.max}}℃</p>
+            <p class="weather_weath">{{day.cond.txt_d}}</p>
+            <p>{{day.wind.sc}}</p>
+        </a>
+    </div>
+
+    <!-- <div id="main" ng-controller="listCtrl">
         <input id="citylist">
         <input type="hidden" id="cityid">
         <p id="description"></p>
         <a href="javascript:;" class="btn btn-default" ng-click="showok()">ok</a>
-        <!-- <table class="table table-striped" style="width:400px;">
-            <tbody>
-                <th>id</th>
-                <th>city</th>
-                <th>prov</th>
-                <tr ng-repeat="item in items">
-                    <td ng-bind="item.id"></td>
-                    <td ng-bind="item.city"></td>
-                    <td ng-bind="item.prov"></td>
-                </tr>
-            </tbody>
-        </table> -->
-    </div>
+    </div> -->
 </body>
 
 </html>
