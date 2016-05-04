@@ -11,13 +11,13 @@ app.controller('listCtrl', function($scope, $http) {
 
     var citylist = [];
 
-    if (!localStorage['citylist']) {
+    if (!localStorage['citylist'] || localStorage['citylist'] === undefined) {
         $http({
             method: 'GET',
             url: qiniu
         }).then(function(response) {
             citylist = response.data.city_info;
-            localStorage['citylist'] = angular.toJson($scope.items);
+            localStorage['citylist'] = angular.toJson(citylist);
         }, function(response) {
             console.log(response);
         });
@@ -25,7 +25,7 @@ app.controller('listCtrl', function($scope, $http) {
         citylist = angular.fromJson(localStorage['citylist']);
     }
 
-    var url = "https://api.heweather.com/x3/weather?cityid=CN101280101&key=6a7d5f6938da427fbb17219e1461e4e4";
+    var url = "https://api.heweather.com/x3/weather?cityid=CN101010200&key=6a7d5f6938da427fbb17219e1461e4e4";
     $http({
         method: 'GET',
         url: url
