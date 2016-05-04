@@ -31,7 +31,17 @@ app.controller('listCtrl', function($scope, $http) {
         url: url
     }).then(function(response) {
         var weather = response.data['HeWeather data service 3.0'][0];
+
+        //去掉第一天
         weather.daily_forecast.shift();
+
+        //留下前三天
+        var threedays = [];
+        for (var i = 0; i < 3; i++) {
+            threedays.push(weather.daily_forecast[i]);
+        }
+        weather.daily_forecast = threedays;
+
         //处理星期几
         weather = convertDate(weather);
         weather.nowtime = getDate();
@@ -41,7 +51,7 @@ app.controller('listCtrl', function($scope, $http) {
         console.log(data);
     });
 
-    filterCity(citylist);
+    // filterCity(citylist);
 
     // $("#citylist").autocomplete({
     //         minLength: 1,
