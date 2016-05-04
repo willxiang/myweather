@@ -8,6 +8,7 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/jquery-ui.js"></script>
     <script src="js/my_weather.js"></script>
+    <script src="js/weather.js"></script>
     <link href="css/jquery-ui.css" rel="stylesheet">
     <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
     <link href="css/weather.css" rel="stylesheet">
@@ -16,7 +17,6 @@
 <body>
     <div id="content" ng-controller="listCtrl">
         <!-- <div class="loading_mask"></div> -->
-        <div class="city_mask" style="display:none;">&nbsp;城市列表</div>
         <a class="weather_today">
             <p class="weather_city_date"><em class="current_city" title="选择城市"></em>{{weather.basic.city}} {{weather.nowtime}}</p>
             <div class="weather_today_icon"><img ng-src="http://www.heweather.com/weather/images/icon/{{weather.now.cond.code}}.png" /></div>
@@ -35,6 +35,82 @@
             <p class="weather_weath">{{day.cond.txt_d}}</p>
             <p>{{day.wind.sc}}</p>
         </a>
+        <div class="city_mask">
+            <a class="city_close" title="close" href="javascript:void(0)"><span>×</span></a>
+            <div class="picker-content">
+                <ul id="tab1" class="nav nav-tabs">
+                    <li class="active"><a href="#province">广东</a></li>
+                    <li><a href="#city">广州</a></li>
+                </ul>
+                <div id="tabContent" class="tab-content">
+                    <div class="tab-pane active" id="province">
+                        <ul class="area-list">
+                            <li><a data-value="1">北京</a></li>
+                            <li><a href="javascript:void(0);" data-value="2">上海</a></li>
+                            <li><a href="javascript:void(0);" data-value="3">天津</a></li>
+                            <li><a href="javascript:void(0);" data-value="4">重庆</a></li>
+                            <li><a href="javascript:void(0);" data-value="5">河北</a></li>
+                            <li><a href="javascript:void(0);" data-value="6">山西</a></li>
+                            <li><a href="javascript:void(0);" data-value="7">河南</a></li>
+                            <li><a href="javascript:void(0);" data-value="8">辽宁</a></li>
+                            <li><a href="javascript:void(0);" data-value="9">吉林</a></li>
+                            <li><a href="javascript:void(0);" data-value="10">黑龙江</a></li>
+                            <li><a href="javascript:void(0);" data-value="11">内蒙古</a></li>
+                            <li><a href="javascript:void(0);" data-value="12">江苏</a></li>
+                            <li><a href="javascript:void(0);" data-value="13">山东</a></li>
+                            <li><a href="javascript:void(0);" data-value="14">安徽</a></li>
+                            <li><a href="javascript:void(0);" data-value="15">浙江</a></li>
+                            <li><a href="javascript:void(0);" data-value="16">福建</a></li>
+                            <li><a href="javascript:void(0);" data-value="17">湖北</a></li>
+                            <li><a href="javascript:void(0);" data-value="18">湖南</a></li>
+                            <li><a href="javascript:void(0);" data-value="19">广东</a></li>
+                            <li><a href="javascript:void(0);" data-value="20">广西</a></li>
+                            <li><a href="javascript:void(0);" data-value="21">江西</a></li>
+                            <li><a href="javascript:void(0);" data-value="22">四川</a></li>
+                            <li><a href="javascript:void(0);" data-value="23">海南</a></li>
+                            <li><a href="javascript:void(0);" data-value="24">贵州</a></li>
+                            <li><a href="javascript:void(0);" data-value="25">云南</a></li>
+                            <li><a href="javascript:void(0);" data-value="26">西藏</a></li>
+                            <li><a href="javascript:void(0);" data-value="27">陕西</a></li>
+                            <li><a href="javascript:void(0);" data-value="28">甘肃</a></li>
+                            <li><a href="javascript:void(0);" data-value="29">青海</a></li>
+                            <li><a href="javascript:void(0);" data-value="30">宁夏</a></li>
+                            <li><a href="javascript:void(0);" data-value="31">新疆</a></li>
+                            <li><a href="javascript:void(0);" data-value="32">台湾</a></li>
+                            <li><a href="javascript:void(0);" data-value="42">香港</a></li>
+                            <li><a href="javascript:void(0);" data-value="43">澳门</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="city">
+                        <ul class="area-list">
+                            <li><a href="javascript:void(0);">广州市</a></li>
+                            <li><a href="javascript:void(0);">深圳市</a></li>
+                            <li><a href="javascript:void(0);">珠海市</a></li>
+                            <li><a href="javascript:void(0);">汕头市</a></li>
+                            <li><a href="javascript:void(0);">韶关市</a></li>
+                            <li><a href="javascript:void(0);">河源市</a></li>
+                            <li><a href="javascript:void(0);">梅州市</a></li>
+                            <li><a href="javascript:void(0);">揭阳市</a></li>
+                            <li><a href="javascript:void(0);">惠州市</a></li>
+                            <li><a href="javascript:void(0);">汕尾市</a></li>
+                            <li><a href="javascript:void(0);">东莞市</a></li>
+                            <li><a href="javascript:void(0);">中山市</a></li>
+                            <li><a href="javascript:void(0);">江门市</a></li>
+                            <li><a href="javascript:void(0);">佛山市</a></li>
+                            <li><a href="javascript:void(0);">阳江市</a></li>
+                            <li><a href="javascript:void(0);">湛江市</a></li>
+                            <li><a href="javascript:void(0);">茂名市</a></li>
+                            <li><a href="javascript:void(0);">肇庆市</a></li>
+                            <li><a href="javascript:void(0);">云浮市</a></li>
+                            <li><a href="javascript:void(0);">清远市</a></li>
+                            <li><a href="javascript:void(0);">潮州市</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- <div id="main" ng-controller="listCtrl">

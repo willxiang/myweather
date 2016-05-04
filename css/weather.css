@@ -16,6 +16,12 @@ p, form, ol, ul, li, dl, dt, dd, h3 {
     list-style: none;
 }
 
+a {
+    color: #A3CDCF;
+    outline: medium none;
+    text-decoration: none;
+}
+
 #content {
     width: 430px;
     height: 211px;
@@ -31,13 +37,16 @@ p, form, ol, ul, li, dl, dt, dd, h3 {
     background: url(/images/loading.gif) no-repeat 50% 50%;
     background-color: rgba(255,255,255,0.6);
 }
+
 .city_mask {
     width: 100%;
     height: 100%;
-    color:#fff;
+    color: #A3CDCF;
     position: absolute;
     z-index: 2;
-    background-color: rgba(0,0,0,0.65);
+    /*background-color: rgba(0,0,0,0.65);*/
+    background: #fff;
+    display: none;
 }
 
 .weather_day, .weather_today {
@@ -95,12 +104,13 @@ p, form, ol, ul, li, dl, dt, dd, h3 {
 }
 
 .current_city {
-    padding-right:8px;
+    padding-right: 8px;
     width: 15px;
     height: 19px;
     float: left;
-    background: url(../images/map.png) no-repeat 0 -2px;
-    cursor:pointer;
+    background: url(/images/map.png) no-repeat 0 -2px;
+    cursor: pointer;
+    display: :none;
 }
 
 .weather_today_temp {
@@ -149,3 +159,147 @@ p, form, ol, ul, li, dl, dt, dd, h3 {
     filter: alpha(opacity=60);
     opacity: 0.6;
 }
+
+.close_hover {
+    /*background: rgba(255,255,255,0.15);*/
+    background: #A3CDCF;
+}
+
+.city_close {
+    float: right;
+    /*text-shadow: 0 1px 0 #000;*/
+    display: inline-block;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    font-style: normal;
+    cursor: pointer;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+
+    .city_close span {
+        display: block;
+        font-size: 12px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        transition: all .2s;
+        color: #333;
+    }
+
+    .city_close:hover {
+        background-color: rgb(141, 193, 195);
+    }
+
+        .city_close:hover span {
+            transform: rotate(90deg);
+        }
+
+.picker-content {
+    padding: 10px 15px;
+    width: 400px;
+    display: inline-block;
+}
+
+    .picker-content .nav {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.picker-content .nav-tabs {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #A3CDCF;
+    display: table;
+    width: 100%;
+}
+
+    .picker-content .nav-tabs li {
+        position: relative;
+        display: block;
+        float: left;
+        margin-bottom: -1px;
+    }
+
+    .picker-content .nav-tabs > li > a {
+        position: relative;
+        display: block;
+        padding: 4px 15px;
+        margin-right: 4px;
+        line-height: 1.428571429;
+        border: 1px solid transparent;
+        border-bottom: 0;
+        border-radius: 4px 4px 0 0;
+    }
+
+        .picker-content .nav-tabs > li > a:hover {
+            background: #fff;
+            border: 1px solid #A3CDCF;
+            border-bottom: 0;
+        }
+
+    .picker-content .nav-tabs > li.active > a,
+    .picker-content .nav-tabs > li.active > a:hover,
+    .picker-content .nav-tabs > li.active > a:focus {
+        color: #A3CDCF;
+        cursor: default;
+        background-color: #ffffff;
+        border: 1px solid #A3CDCF;
+        border-bottom-color: transparent;
+    }
+
+    .picker-content .nav-tabs > li.active > a {
+        /*font-weight: bold;*/
+    }
+
+.city-site-picker .nav:after {
+    clear: both;
+}
+
+.picker-content .nav:after, .nav:before {
+    display: table;
+    content: " ";
+}
+
+.picker-content .tab-content > .tab-pane {
+    display: none;
+}
+
+.picker-content .tab-content > .active {
+    display: block;
+}
+
+.area-list {
+    padding-top: 5px;
+    list-style: none;
+}
+
+    .area-list li {
+        float: left;
+        width: 51px;
+        padding: 2px 0 2px 5px;
+    }
+
+        .area-list li a {
+            display: inline-block;
+            padding: 2px 4px;
+            color: #A3CDCF;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: all .2s;
+        }
+
+            .area-list li a:hover {
+                background: #A3CDCF;
+                color: #fff;
+                text-decoration: none;
+            }
