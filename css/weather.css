@@ -7,7 +7,7 @@
     margin: 0;
     border: 0;
     font: 12px/1.6 "Microsoft Yahei","Tahoma","SimSun";
-    font-family: -webkit-body;
+    /*font-family: -webkit-body;*/
 }
 
 p, form, ol, ul, li, dl, dt, dd, h3 {
@@ -45,7 +45,7 @@ a {
     position: absolute;
     z-index: 2;
     background-color: rgba(0,0,0,0.86);
-    display: none;
+    display: block;
 }
 
 .weather_day, .weather_today {
@@ -303,3 +303,26 @@ a {
                 color: #fff;
                 text-decoration: none;
             }
+.weather_tip_menu{
+    position: absolute;
+    overflow: hidden;
+    z-index: 3;
+    border: 1px solid #666;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+    background: #010304;
+    color: #fff;
+}
+.weather_tip_menu ul{
+    overflow: hidden;
+}
+.weather_tip_menu ul li{
+    border-top: 1px solid #010304;
+    border-bottom: 1px solid #010304;
+    padding: 0px 8px;
+}
+.weather_tip_menu ul li:hover{
+    cursor: pointer;
+    background: rgba(255,255,255,0.23);
+    border-top: 1px solid rgba(68,68,68,0.8);
+    border-bottom: 1px solid rgba(68,68,68,0.8);
+}
