@@ -16,7 +16,7 @@
 
 <body>
     <div id="content" ng-controller="listCtrl">
-        <!-- <div class="loading_mask"></div> -->
+        <div class="loading_mask"></div>
         <a class="weather_today">
             <p class="weather_city_date"><em class="current_city" title="选择城市"></em>{{weather.basic.city}} {{weather.nowtime}}</p>
             <div class="weather_today_icon"><img ng-src="http://www.heweather.com/weather/images/icon/{{weather.now.cond.code}}.png" /></div>
@@ -119,5 +119,4 @@
         <a href="javascript:;" class="btn btn-default" ng-click="showok()">ok</a>
     </div> -->
 </body>
-
 </html>
