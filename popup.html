@@ -1,4 +1,4 @@
-<html ng-app="myweather">
+﻿<html ng-app="myweather">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,7 +19,7 @@
     <div id="content" ng-controller="listCtrl">
         <div class="loading_mask"></div>
         <a class="weather_today">
-            <p class="weather_city_date"><em class="current_city" title="选择城市"></em>{{weather.basic.city}} {{weather.nowtime}}</p>
+            <p class="weather_city_date"><em class="current_city" title="选择城市"></em><span class="city_list">{{weather.basic.city}}</span> {{weather.nowtime}}</p>
             <div class="weather_today_icon"><img ng-src="http://www.heweather.com/weather/images/icon/{{weather.now.cond.code}}.png" /></div>
             <p class="weather_today_temp">{{weather.now.tmp}}℃</p>
             <p class="weather_weath">{{weather.now.cond.txt}}</p>
@@ -38,6 +38,12 @@
         </a>
         <div class="city_mask">
             <a class="city_close" title="close" href="javascript:void(0)"><span>×</span></a>
+            <div class="weather_tip_menu">
+                <ul>
+                    <li id="city_add">添加</li>
+                    <li id="city_del">删除</li>
+                </ul>
+            </div>
             <div class="picker-content">
                 <ul id="tab1" class="nav nav-tabs">
                     <li class="active"><a href="#province">广东</a></li>
@@ -106,12 +112,6 @@
                             <li><a href="javascript:void(0);">清远市</a></li>
                             <li><a href="javascript:void(0);">潮州市</a></li>
                         </ul>
-                        <div class="weather_tip_menu">
-                            <ul>
-                                <li id="city_add">添加</li>
-                                <li id="city_del">删除</li>
-                            </ul>
-                        </div>
                     </div>
                     <div class="clear"></div>
                 </div>

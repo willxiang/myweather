@@ -45,7 +45,7 @@ a {
     position: absolute;
     z-index: 2;
     background-color: rgba(0,0,0,0.86);
-    display: block;
+    display: none;
 }
 
 .weather_day, .weather_today {
@@ -111,6 +111,11 @@ a {
     background: url(../images/map.png) no-repeat 0 -2px;
     cursor: pointer;
     display: :none;
+}
+.city_list{
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 2px 20px 2px 8px;
+    background: url(../images/arrow_down-w.png) no-repeat 34px 3px;
 }
 
 .weather_today_temp {
@@ -180,7 +185,7 @@ a {
 
     .city_close span {
         display: block;
-        font-size: 12px;
+        font-size: 14px;
         width: 16px;
         height: 16px;
         line-height: 16px;
