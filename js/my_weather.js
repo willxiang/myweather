@@ -25,10 +25,6 @@ app.controller('listCtrl', function($scope, $http) {
         citylist = angular.fromJson(localStorage['citylist']);
     }
 
-    console.log(extractProv(citylist));
-
-    console.log(extractCity("湖南",citylist));
-
     var url = "https://api.heweather.com/x3/weather?cityid=CN101010200&key=6a7d5f6938da427fbb17219e1461e4e4";
     $http({
         method: 'GET',
