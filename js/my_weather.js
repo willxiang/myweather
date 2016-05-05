@@ -25,6 +25,10 @@ app.controller('listCtrl', function($scope, $http) {
         citylist = angular.fromJson(localStorage['citylist']);
     }
 
+    console.log(extractProv(citylist));
+
+    console.log(extractCity("湖南",citylist));
+
     var url = "https://api.heweather.com/x3/weather?cityid=CN101010200&key=6a7d5f6938da427fbb17219e1461e4e4";
     $http({
         method: 'GET',
@@ -46,7 +50,7 @@ app.controller('listCtrl', function($scope, $http) {
         weather = convertDate(weather);
         weather.nowtime = getDate();
         $scope.weather = weather;
-        console.log(weather);
+        // console.log(weather);
     }, function(data) {
         console.log(data);
     });
@@ -76,30 +80,4 @@ app.controller('listCtrl', function($scope, $http) {
 });
 
 
-function filterCity(citylist) {
-    for (var i = 0; i < citylist.length; i++) {
-        // source.push(citylist[i].city + "-" + citylist[i].prov + "-"+citylist[i].id);
-        citylist[i].value = citylist[i].city;
-        citylist[i].label = citylist[i].city;
-        citylist[i].desc = citylist[i].city + " - " + citylist[i].prov;
-    }
-}
 
-function getDayOfWeek(dayValue) {
-    var day = new Date(Date.parse(dayValue.replace(/-/g, '/'))); // 将日期值格式化
-    var today = new Array("星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
-    return today[day.getDay()] //day.getDay(); 根据 Date 返一个星期中的某一天，其中 0 为星期日
-}
-
-function convertDate(weather) {
-    for (var i = 0; i < weather.daily_forecast.length; i++) {
-        weather.daily_forecast[i].weekday = getDayOfWeek(weather.daily_forecast[i].date);
-    }
-    return weather;
-}
-
-function getDate() {
-    var date = new Date();
-    var min = date.getMinutes() > 9 ? date.getMinutes() : "0" + date.getMinutes();
-    return date.getHours() + ":" + min;
-}
