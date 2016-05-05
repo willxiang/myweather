@@ -34,7 +34,7 @@ a {
     height: 100%;
     position: absolute;
     z-index: 2;
-    background: url(/images/loading.gif) no-repeat 50% 50%;
+    background: url(../images/loading.gif) no-repeat 50% 50%;
     background-color: rgba(255,255,255,0.6);
 }
 
@@ -44,8 +44,7 @@ a {
     color: #A3CDCF;
     position: absolute;
     z-index: 2;
-    /*background-color: rgba(0,0,0,0.65);*/
-    background: #fff;
+    background-color: rgba(0,0,0,0.86);
     display: none;
 }
 
@@ -100,15 +99,16 @@ a {
 
 .weather_city_date {
     text-align: left;
-    margin: 10px 0 0 10px;
+    margin: 10px 0 0 32px;
 }
 
 .current_city {
-    padding-right: 8px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
     width: 15px;
     height: 19px;
-    float: left;
-    background: url(/images/map.png) no-repeat 0 -2px;
+    background: url(../images/map.png) no-repeat 0 -2px;
     cursor: pointer;
     display: :none;
 }
@@ -166,7 +166,7 @@ a {
 }
 
 .city_close {
-    text-shadow: 0 1px 0 #333;
+    /*text-shadow: 0 1px 0 #333;*/
     display: inline-block;
     padding: 0;
     width: 16px;
@@ -185,14 +185,15 @@ a {
         height: 16px;
         line-height: 16px;
         transition: all .2s;
-        color: #333;
+        color: #A3CDCF;
     }
 
     .city_close:hover {
-        background-color: rgb(141, 193, 195);
+        background-color: #A3CDCF;
     }
 
         .city_close:hover span {
+            color: #fff;
             transform: rotate(90deg);
         }
 
@@ -240,7 +241,8 @@ a {
     }
 
         .picker-content .nav-tabs > li > a:hover {
-            background: #fff;
+            color: #fff;
+            background: #A3CDCF;
             border: 1px solid #A3CDCF;
             border-bottom: 0;
         }
@@ -248,9 +250,9 @@ a {
     .picker-content .nav-tabs > li.active > a,
     .picker-content .nav-tabs > li.active > a:hover,
     .picker-content .nav-tabs > li.active > a:focus {
-        color: #A3CDCF;
+        color: #fff;
         cursor: default;
-        background-color: #ffffff;
+        background-color: #A3CDCF;
         border: 1px solid #A3CDCF;
         border-bottom-color: transparent;
     }
