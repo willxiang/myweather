@@ -8,7 +8,8 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/jquery-ui.js"></script>
     <script src="js/my_weather.js"></script>
-    <script src="js/weather.js"></script>
+    <script src="js/operation.js"></script>
+    <script src="js/util.js"></script>
     <link href="css/jquery-ui.css" rel="stylesheet">
     <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
     <link href="css/weather.css" rel="stylesheet">
@@ -35,7 +36,7 @@
             <p class="weather_weath">{{day.cond.txt_d}}</p>
             <p>{{day.wind.sc}}</p>
         </a>
-<div class="city_mask">
+        <div class="city_mask">
             <a class="city_close" title="close" href="javascript:void(0)"><span>×</span></a>
             <div class="picker-content">
                 <ul id="tab1" class="nav nav-tabs">
@@ -79,7 +80,6 @@
                             <li><a href="javascript:void(0);" data-value="32">台湾</a></li>
                             <li><a href="javascript:void(0);" data-value="42">香港</a></li>
                             <li><a href="javascript:void(0);" data-value="43">澳门</a></li>
-
                         </ul>
                     </div>
                     <div class="tab-pane" id="city">
@@ -108,8 +108,8 @@
                         </ul>
                         <div class="weather_tip_menu">
                             <ul>
-                                <li>添加</li>
-                                <li>删除</li>
+                                <li id="city_add">添加</li>
+                                <li id="city_del">删除</li>
                             </ul>
                         </div>
                     </div>
@@ -117,9 +117,8 @@
                 </div>
             </div>
         </div>
-        </div>
     </div>
-
+    </div>
     <!-- <div id="main" ng-controller="listCtrl">
         <input id="citylist">
         <input type="hidden" id="cityid">
