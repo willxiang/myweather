@@ -1,0 +1,31 @@
+<html ng-app='app'>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+    <hello>
+        <br/>
+        <span>原始的内容，</span>
+        <br/>
+        <span>还会在这里。</span>
+    </hello>
+    <br>
+    <hello>
+    </hello>
+</body>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/angular.js"></script>
+<script type="text/javascript">
+var appModule = angular.module('app', []);
+appModule.directive('hello', function() {
+    return {
+        restrict: 'E',
+        template: '<div>Hi there <div ng-transclude></div></div>',
+        transclude: true
+    };
+});
+</script>
+
+</html>

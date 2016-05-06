@@ -1,79 +1,62 @@
 <!doctype html>
-<html lang="en">
+<html ng-app="expanderModule" lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>jQuery UI 自动完成（Autocomplete） - 自定义数据并显示</title>
+    <title></title>
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.js"></script>
-    <link href="css/jquery-ui.css" rel="stylesheet">
-    <style>
-    #project-label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 1em;
+    <script type="text/javascript" src="js/angular.js"></script>
+    <style type="text/css">
+    .expander {
+        border: 1px solid black;
+        width: 250px;
     }
     
-    #project-icon {
-        float: left;
-        height: 32px;
-        width: 32px;
+    .expander>.title {
+        background-color: black;
+        color: white;
+        padding: .1em .3em;
+        cursor: pointer;
     }
     
-    #project-description {
-        margin: 0;
-        padding: 0;
+    .expander>.body {
+        padding: .1em .3em;
     }
     </style>
-    <script>
-    $(function() {
-        var projects = [{
-            value: "jquery",
-            label: "jQuery",
-            desc: "the write less, do more, JavaScript library",
-            icon: "jquery_32x32.png"
-        }, {
-            value: "jquery-ui",
-            label: "jQuery UI",
-            desc: "the official user interface library for jQuery",
-            icon: "jqueryui_32x32.png"
-        }, {
-            value: "sizzlejs",
-            label: "Sizzle JS",
-            desc: "a pure-JavaScript CSS selector engine",
-            icon: "sizzlejs_32x32.png"
-        }];
-
-        $("#project").autocomplete({
-                minLength: 0,
-                source: projects,
-                focus: function(event, ui) {
-                    $("#project").val(ui.item.label);
-                    return false;
-                },
-                select: function(event, ui) {
-                    $("#project").val(ui.item.label);
-                    $("#project-id").val(ui.item.value);
-                    $("#project-description").html(ui.item.desc);
-                    // $( "#project-icon" ).attr( "src", "images/" + ui.item.icon );
-
-                    return false;
-                }
-            })
-            .data("ui-autocomplete")._renderItem = function(ul, item) {
-                return $("<li>")
-                    .append("<a>" + item.label + "<br>" + item.desc + "</a>")
-                    .appendTo(ul);
-            };
-    });
-    </script>
 </head>
 
 <body>
-    <div id="project-label">选择一个项目（请键入 "j"）：</div>
-    <input id="project">
-    <input type="hidden" id="project-id">
-    <p id="project-description"></p>
+    <div ng-controller='SomeController'>
+        <expander class='expander' expander-title='title' will-xiang='willxiang'>
+            {{text}}
+        </expander>
+    </div>
 </body>
+<script type="text/javascript">
+var expanderModule = angular.module('expanderModule', [])
+expanderModule.directive('expander', function() {
+    return {
+        restrict: 'EA',
+        replace: true,
+        transclude: true,
+        scope: {
+            title: '=expanderTitle',
+            name:'=willXiang'
+        },
+        template: '<div>' + '<div class="title" ng-click="toggle()">{{title}}</div>' + '<div class="body" ng-show="showMe" ng-transclude></div>' + '</div>',
+        link: function(scope, element, attrs) {
+            scope.showMe = false;
+            scope.toggle = function toggle() {
+                scope.showMe = !scope.showMe;
+                console.log(scope.title);
+            }
+        }
+    }
+});
+expanderModule.controller('SomeController', function($scope) {
+    $scope.title = '点击展开';
+    $scope.text = '这里是内部的内容。';
+});
+</script>
 
 </html>
