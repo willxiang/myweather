@@ -27,10 +27,10 @@
                     <div class="city_selected">
                         <ul>
                             <li>{{weather.basic.city}}</li>
-                            <li>长沙市</li>
-                            <li>广州市</li>
+                            <li id="CN101250101">长沙市</li>
+                            <li id="CN101280101">广州市</li>
                         </ul>
-                        <em class="weather_city_icon"></em>
+                        <b></b>
                     </div>
                 </div>
                 <div class="weather_city_time">
@@ -69,7 +69,10 @@
                 <div id="tabContent" class="tab-content">
                     <div class="tab-pane active" id="province">
                         <ul class="area-list">
-                            <li><a data-value="1">北京</a></li>
+                            <li ng-repeat="cityifo in allcityinfo">
+                                <a href="javascript:void(0);">{{cityinfo.province}}</a>
+                            </li>
+                            <li><a href="javascript:void(0);" data-value="1">北京</a></li>
                             <li><a href="javascript:void(0);" data-value="2">上海</a></li>
                             <li><a href="javascript:void(0);" data-value="3">天津</a></li>
                             <li><a href="javascript:void(0);" data-value="4">重庆</a></li>
@@ -134,7 +137,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- <div id="main" ng-controller="listCtrl">
         <input id="citylist">
