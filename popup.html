@@ -19,7 +19,24 @@
     <div id="content" ng-controller="listCtrl">
         <div class="loading_mask"></div>
         <a class="weather_today">
-            <p class="weather_city_date"><em class="current_city" title="选择城市"></em><span class="city_list">{{weather.basic.city}}</span> {{weather.nowtime}}</p>
+            <div class="weather_today_head">
+                <div class="weather_city_map">
+                    <em class="current_city" title="选择城市"></em>
+                </div>
+                <div class="weather_city_list">
+                    <div class="city_selected">
+                        <ul>
+                            <li>{{weather.basic.city}}</li>
+                            <li>长沙市</li>
+                            <li>广州市</li>
+                        </ul>
+                        <em class="weather_city_icon"></em>
+                    </div>
+                </div>
+                <div class="weather_city_time">
+                    <span>{{weather.nowtime}}</span>
+                </div>
+            </div>
             <div class="weather_today_icon"><img ng-src="http://www.heweather.com/weather/images/icon/{{weather.now.cond.code}}.png" /></div>
             <p class="weather_today_temp">{{weather.now.tmp}}℃</p>
             <p class="weather_weath">{{weather.now.cond.txt}}</p>

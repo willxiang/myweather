@@ -25,7 +25,7 @@ a {
 #content {
     width: 430px;
     height: 211px;
-    background-color: rgba(141, 193, 195, 0.8);
+    background-color: rgba(84, 140, 140, 0.8);
     position: relative;
 }
 
@@ -80,11 +80,55 @@ a {
     width: 160px;
 }
 
+.weather_today_head {
+    margin-top: 6px;
+    float: left;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+}
+
+.weather_city_map {
+    position: relative;
+    float: left;
+    width: 15px;
+    height: 19px;
+    padding: 3px 5px;
+}
+
+.weather_city_list {
+    float: left;
+    width: 65px;
+    height: 23px;
+    position: relative;
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.2);
+    /*background: url(../images/arrow_down-w.png) no-repeat 34px 3px;*/
+}
+
+    .weather_city_list .city_selected {
+        position: absolute;
+        overflow: hidden;
+        height: 23px;
+    }
+
+    .weather_city_list .hover {
+        cursor: pointer;
+        background: rgba(51,51,51,0.86);
+        height: auto;
+    }
+
+.weather_city_time {
+    float: left;
+    padding-left: 5px;
+}
+
 .weather_today_icon {
     margin: 0 auto;
     width: 73px;
     height: 73px;
     line-height: 73px;
+    display: table;
 }
 
     .weather_today_icon img {
@@ -97,25 +141,35 @@ a {
     height: 60px;
 }
 
-.weather_city_date {
-    text-align: left;
-    margin: 10px 0 0 32px;
-}
-
 .current_city {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 15px;
-    height: 19px;
+    top: 3px;
+    left: 4px;
+    width: 17px;
+    height: 21px;
     background: url(../images/map.png) no-repeat 0 -2px;
     cursor: pointer;
-    display: :none;
 }
-.city_list{
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 2px 20px 2px 8px;
-    background: url(../images/arrow_down-w.png) no-repeat 34px 3px;
+
+.weather_city_list ul {
+}
+
+    .weather_city_list ul li {
+        padding: 0 20px 0 8px;
+        text-align: left;
+    }
+
+        .weather_city_list ul li:hover {
+            background: #333;
+        }
+
+.weather_city_icon {
+    position: absolute;
+    top: 9px;
+    right: 5px;
+    width: 10px;
+    height: 8px;
+    background: url(../images/arrow_down-w.png) no-repeat -3px -4px;
 }
 
 .weather_today_temp {
@@ -308,7 +362,8 @@ a {
                 color: #fff;
                 text-decoration: none;
             }
-.weather_tip_menu{
+
+.weather_tip_menu {
     position: absolute;
     overflow: hidden;
     z-index: 3;
@@ -318,17 +373,20 @@ a {
     color: #fff;
     display: none;
 }
-.weather_tip_menu ul{
-    overflow: hidden;
-}
-.weather_tip_menu ul li{
-    border-top: 1px solid #010304;
-    border-bottom: 1px solid #010304;
-    padding: 0px 8px;
-}
-.weather_tip_menu ul li:hover{
-    cursor: pointer;
-    background: rgba(255,255,255,0.23);
-    border-top: 1px solid rgba(68,68,68,0.8);
-    border-bottom: 1px solid rgba(68,68,68,0.8);
-}
+
+    .weather_tip_menu ul {
+        overflow: hidden;
+    }
+
+        .weather_tip_menu ul li {
+            border-top: 1px solid #010304;
+            border-bottom: 1px solid #010304;
+            padding: 0px 8px;
+        }
+
+            .weather_tip_menu ul li:hover {
+                cursor: pointer;
+                background: rgba(255,255,255,0.23);
+                border-top: 1px solid rgba(68,68,68,0.8);
+                border-bottom: 1px solid rgba(68,68,68,0.8);
+            }
