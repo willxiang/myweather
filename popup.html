@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width" />
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/angular.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.js"></script>
     <script src="js/my_weather.js"></script>
     <script src="js/request.js"></script>
     <script src="js/operation.js"></script>
     <script src="js/util.js"></script>
-    <link href="css/jquery-ui.css" rel="stylesheet">
-    <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+    <script src="js/service.js"></script>
     <link href="css/weather.css" rel="stylesheet">
 </head>
 
@@ -29,11 +26,6 @@
                     <ul>
                         <li ng-repeat="selectcity in selectedCitys" ng-click="switchCity(selectcity)" ng-model="selectcity">{{selectcity.city}}</li>
                     </ul>
-                        <!-- <ul>
-                            <li>{{weather.basic.city}}</li>
-                            <li id="CN101250101">长沙市</li>
-                            <li id="CN101280101">广州市</li>
-                        </ul> -->
                         <b></b>
                     </div>
                 </div>
