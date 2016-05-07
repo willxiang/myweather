@@ -26,8 +26,5 @@ app.factory('httpService', function($http, $q) {
         });
         return defer.promise;
     }
-
-
     return service;
-
 });
