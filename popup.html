@@ -27,7 +27,7 @@
                 <div class="weather_city_list">
                     <div class="city_selected">
                     <ul>
-                        <li ng-repeat="selectcity in selectedCitys">{{selectcity.city}}</li>
+                        <li ng-repeat="selectcity in selectedCitys" ng-click="switchCity(selectcity)" ng-model="selectcity">{{selectcity.city}}</li>
                     </ul>
                         <!-- <ul>
                             <li>{{weather.basic.city}}</li>
@@ -57,6 +57,7 @@
             <p class="weather_weath">{{day.cond.txt_d}}</p>
             <p>{{day.wind.sc}}</p>
         </a>
+
         <div class="city_mask">
             <a class="city_close" title="close" href="javascript:void(0)"><span>×</span></a>
             <div class="weather_tip_menu">
