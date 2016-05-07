@@ -8,6 +8,7 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/jquery-ui.js"></script>
     <script src="js/my_weather.js"></script>
+    <script src="js/request.js"></script>
     <script src="js/operation.js"></script>
     <script src="js/util.js"></script>
     <link href="css/jquery-ui.css" rel="stylesheet">
@@ -25,11 +26,14 @@
                 </div>
                 <div class="weather_city_list">
                     <div class="city_selected">
-                        <ul>
+                    <ul>
+                        <li ng-repeat="selectcity in selectedCitys">{{selectcity.city}}</li>
+                    </ul>
+                        <!-- <ul>
                             <li>{{weather.basic.city}}</li>
                             <li id="CN101250101">长沙市</li>
                             <li id="CN101280101">广州市</li>
-                        </ul>
+                        </ul> -->
                         <b></b>
                     </div>
                 </div>
